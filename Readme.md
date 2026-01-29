@@ -6,7 +6,7 @@ A low-cost, real-time feedback system designed to gamify and digitize CPR traini
 ![Tech](https://img.shields.io/badge/Tech-Arduino%20%7C%20C%2B%2B%20%7C%20Sensors-blue)
 
 ## 🎥 Project Demo
-*(Insert a photo or GIF of your circuit working here)*
+[![Watch the Video](img1.png)](https://github.com/Muhammad-Sohair/CPR-Trainer/blob/main/Demo_video.mp4)
 
 ## 💡 The Problem
 High-fidelity CPR manikins that provide feedback on compression depth and rate cost thousands of dollars, making quality training inaccessible in many regions.
@@ -39,4 +39,5 @@ The firmware is written in **C++** and utilizes a **Non-Blocking State Machine**
 ---
 Made by: Muhammad Sohair Khan
 Led by: Engr. M. Yasir Zaheen
+
 **University:** Sir Syed University of Engineering & Technology (SSUET).
