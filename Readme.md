@@ -43,19 +43,19 @@ I developed a portable, non-invasive module using an **Arduino Uno** and **Force
 - **Microcontroller:** Arduino Uno (ATmega328P)
 - **Sensors:** Interlink FSR 402. It measures force, not depth; its thresholds were set by hand and were not calibrated against measured depth.
 - **Display:** 16x2 LCD with I2C Interface (PCF8574)
-- **Feedback:** 5mm LEDs (Green, Red, Blue) & Active Buzzer
+- **Feedback:** 5mm LEDs (Green, Red) & Active Buzzer. The code also drives a "breath mode" LED on pin 11, but it was not fitted.
 
 ## 💻 Code Highlights
 The firmware is written in **C++** and utilizes a **Non-Blocking State Machine** architecture.
-- Replaced standard `delay()` with `millis()` timers to allow simultaneous sensor reading and metronome beeping.
-- Implemented noise filtering and hysteresis to prevent LED flickering during compressions.
+- Uses `millis()` timers for the metronome, so the sensor keeps being read while it beeps. A few short `delay()` calls remain: start-up, the sleep, wake and resume messages, and the breath cue.
+- Uses separate start (150) and release (50) thresholds, a form of hysteresis, so one compression is not counted twice. There is no other noise filtering.
 
 
 ## 🚀 How to Run
 1. Install the `LiquidCrystal_I2C` library in Arduino IDE.
 2. Connect the FSR sensor to Pin A0 (with 10kΩ pull-down resistor).
 3. Connect LCD via I2C (SDA -> A4, SCL -> A5).
-4. Upload `CPR_Trainer.ino`.
+4. Upload `code.ino` (FSR prototype). For the v4.2 ultrasonic version, open `CPR_Trainer_v4_2/CPR_Trainer_v4_2.ino` instead.
 
 ---
 Made by: Muhammad Sohair Khan
