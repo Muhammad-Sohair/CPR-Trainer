@@ -1,6 +1,6 @@
 # 🫀 Arduino CPR Feedback Training Module
 
-A low-cost, real-time feedback system designed to gamify and digitize CPR training. This device upgrades standard passive manikins into "smart" training tools compliant with **AHA 2025 Guidelines**.
+A low-cost, real-time feedback system for CPR practice. It gives feedback on compression depth, cues the compression rate with a metronome, and runs the 30:2 compression-to-breath cycle. The AHA and ERC 2025 targets (5–6 cm depth, 100–120 compressions/min) are used as reference values. It is a student-built training aid: it has not been calibrated against a reference instrument or certified, and it makes no clinical claims.
 
 ![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Tech](https://img.shields.io/badge/Tech-Arduino%20%7C%20C%2B%2B%20%7C%20Sensors-blue)
@@ -20,7 +20,7 @@ A low-cost, real-time feedback system designed to gamify and digitize CPR traini
   | 11–12 cm | 3–4 cm | PUSH HARDER |
   | ≤ 8 cm | more than 6 cm | TOO HARD |
   
-  Distances are whole centimetres. A stroke starts below 13 cm.
+  Distances are whole centimetres. A stroke starts below 13 cm. The depth column is nominal: because readings are truncated to whole centimetres and the rest distance is fixed at 15 cm, the real "GOOD" band can sit up to about 1 cm shallower or deeper than 5–6 cm. The accompanying preprint gives the full analysis.
 - **Cycle.** 110 BPM metronome. After 30 compressions, a 5 s breath pause.
 - **Pins.** TRIG D4, ECHO D5, buzzer D8, green LED D9, red LED D10. The LCD is on I²C at 0x27.
 - **Telemetry.** One JSON line per loop over USB at 9600 baud: `{"fsr":F,"status":S,"count":N}`. Despite its name, `fsr` is the distance re-encoded for the original FSR dashboard: `F = 100 × (15 − distance_cm)`.
@@ -41,7 +41,7 @@ I developed a portable, non-invasive module using an **Arduino Uno** and **Force
 
 ## 🔌 Hardware Tech Stack
 - **Microcontroller:** Arduino Uno (ATmega328P)
-- **Sensors:** Interlink FSR 402 (Calibrated for 5-6cm depth proxy)
+- **Sensors:** Interlink FSR 402. It measures force, not depth; its thresholds were set by hand and were not calibrated against measured depth.
 - **Display:** 16x2 LCD with I2C Interface (PCF8574)
 - **Feedback:** 5mm LEDs (Green, Red, Blue) & Active Buzzer
 
