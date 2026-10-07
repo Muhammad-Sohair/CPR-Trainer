@@ -5,7 +5,28 @@ A low-cost, real-time feedback system designed to gamify and digitize CPR traini
 ![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Tech](https://img.shields.io/badge/Tech-Arduino%20%7C%20C%2B%2B%20%7C%20Sensors-blue)
 
-## 🎥 Project Demo
+## 📦 Versions in this repository
+| Version | Folder / file | Sensor | Status |
+|---|---|---|---|
+| **v4.2 "Sonic Mode"** | [`CPR_Trainer_v4_2/`](CPR_Trainer_v4_2/CPR_Trainer_v4_2.ino) | HC-SR04 ultrasonic | Presented at ICETBEST 2026 (Salim Habib University, Karachi, 19–20 May 2026) |
+| v1 (first prototype, Jan 2026) | [`code.ino`](code.ino) | Interlink FSR 402 | Superseded; described in the sections below |
+
+### v4.2 at a glance
+- **Rig.** An HC-SR04 sits at the bottom of a hollow shaft in a 10-inch Jumbolon (closed-cell polyethylene) foam block. It measures the distance to a rigid plastic reflector plate inside the block. The rest distance is 15 cm.
+- **Classification of the deepest point of each compression.**
+  | Reported distance | Approx. depth | LCD message |
+  |---|---|---|
+  | 9–10 cm | 5–6 cm | GOOD |
+  | 11–12 cm | 3–4 cm | PUSH HARDER |
+  | ≤ 8 cm | more than 6 cm | TOO HARD |
+  
+  Distances are whole centimetres. A stroke starts below 13 cm.
+- **Cycle.** 110 BPM metronome. After 30 compressions, a 5 s breath pause.
+- **Pins.** TRIG D4, ECHO D5, buzzer D8, green LED D9, red LED D10. The LCD is on I²C at 0x27.
+- **Telemetry.** One JSON line per loop over USB at 9600 baud: `{"fsr":F,"status":S,"count":N}`. Despite its name, `fsr` is the distance re-encoded for the original FSR dashboard: `F = 100 × (15 − distance_cm)`.
+- **Web dashboard.** A Flask + Flask-SocketIO server with a Chart.js live graph, made public through ngrok. Not yet in this repository.
+
+## 🎥 Project Demo (v1, FSR prototype)
 https://github.com/user-attachments/assets/2b567ae3-7cb6-4be4-9a8d-5c7575663425
 
 ## 💡 The Problem
