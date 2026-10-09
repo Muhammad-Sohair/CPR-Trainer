@@ -2,6 +2,24 @@
 
 A low-cost, real-time feedback system for CPR practice. It gives feedback on compression depth, cues the compression rate with a metronome, and runs the 30:2 compression-to-breath cycle. The AHA and ERC 2025 targets (5–6 cm depth, 100–120 compressions/min) are used as reference values. It is a student-built training aid: it has not been calibrated against a reference instrument or certified, and it makes no clinical claims.
 
+## 📄 Paper
+**M. S. Khan, "Arduino-Based CPR Trainer with Live Telemetry," *Preprints*, Oct. 2026.**
+DOI: [10.20944/preprints202610.0760.v1](https://doi.org/10.20944/preprints202610.0760.v1) · [Read on Preprints.org](https://www.preprints.org/manuscript/202610.0760/v1)
+
+The preprint describes v4.2 (the ultrasonic version in [`CPR_Trainer_v4_2/`](CPR_Trainer_v4_2/CPR_Trainer_v4_2.ino)) and analyzes its firmware. It is not peer-reviewed.
+
+```bibtex
+@misc{khan2026cprtrainer,
+  author = {Khan, Muhammad Sohair},
+  title  = {Arduino-Based {CPR} Trainer with Live Telemetry},
+  year   = {2026},
+  month  = oct,
+  publisher = {Preprints},
+  doi    = {10.20944/preprints202610.0760.v1},
+  url    = {https://www.preprints.org/manuscript/202610.0760/v1}
+}
+```
+
 ![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Tech](https://img.shields.io/badge/Tech-Arduino%20%7C%20C%2B%2B%20%7C%20Sensors-blue)
 
