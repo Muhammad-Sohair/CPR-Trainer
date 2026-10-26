@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the accompanying preprint."
+title: "Arduino CPR Feedback Training Module"
+type: software
+authors:
+  - family-names: Khan
+    given-names: Muhammad Sohair
+    orcid: "https://orcid.org/0009-0009-2565-0767"
+repository-code: "https://github.com/Muhammad-Sohair/CPR-Trainer"
+keywords:
+  - CPR training
+  - CPR feedback
+  - Arduino
+  - ultrasonic sensor
+  - chest compression
+  - low-cost medical training
+  - embedded systems
+preferred-citation:
+  type: article
+  title: "Arduino-Based CPR Trainer with Live Telemetry"
+  authors:
+    - family-names: Khan
+      given-names: Muhammad Sohair
+      orcid: "https://orcid.org/0009-0009-2565-0767"
+  journal: "Preprints"
+  publisher:
+    name: "Preprints.org"
+  year: 2026
+  month: 10
+  doi: "10.20944/preprints202610.0760.v1"
+  url: "https://www.preprints.org/manuscript/202610.0760/v1"

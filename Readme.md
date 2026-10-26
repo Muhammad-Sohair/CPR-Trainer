@@ -1,5 +1,10 @@
 # 🫀 Arduino CPR Feedback Training Module
 
+[![DOI](https://img.shields.io/badge/DOI-10.20944%2Fpreprints202610.0760.v1-blue)](https://doi.org/10.20944/preprints202610.0760.v1)
+[![Paper](https://img.shields.io/badge/Paper-Preprints.org-orange)](https://www.preprints.org/manuscript/202610.0760/v1)
+
+**📄 Paper:** [Arduino-Based CPR Trainer with Live Telemetry](https://doi.org/10.20944/preprints202610.0760.v1) (Preprints.org, Oct. 2026)
+
 A low-cost, real-time feedback system for CPR practice. It gives feedback on compression depth, cues the compression rate with a metronome, and runs the 30:2 compression-to-breath cycle. The AHA and ERC 2025 targets (5–6 cm depth, 100–120 compressions/min) are used as reference values. It is a student-built training aid: it has not been calibrated against a reference instrument or certified, and it makes no clinical claims.
 
 ## 📄 Paper
